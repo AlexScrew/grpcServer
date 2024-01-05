@@ -1,0 +1,30 @@
+
+server:
+  port: 8082
+grpc:
+  port: 8980
+  enable-reflection: true
+
+spring:
+  application:
+    name: grpc-start
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+# Enable logging
+logging:
+  level:
+    root: INFO
+    org.org.grpctest: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    health:
+      show-details: always
+stock:
+  server:
+    port: 8980
